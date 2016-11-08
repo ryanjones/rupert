@@ -1,0 +1,2 @@
+class FbControllerController < ApplicationController
+end
