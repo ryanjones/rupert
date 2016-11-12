@@ -37,8 +37,7 @@ private
       },
       batteryReplacementLookup: -> (request) {
         context = request["context"]
-        puts 'performing a battery lookup'
-        ap request
+        puts 'Performing a battery lookup'
         year = request["entities"]["year"].first["value"]
         make = request["entities"]["make"].first["value"]
         model = request["entities"]["model"].first["value"]
