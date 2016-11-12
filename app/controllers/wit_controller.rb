@@ -14,9 +14,9 @@ class WitController < ApplicationController
 
 
 
-        # context["make"] = make
-        # context["year"] = year
-        # context["model"] = model
+        context["make"] = make
+        context["year"] = year
+        context["model"] = model
 
         context['retry'] = "true"
 
@@ -25,9 +25,9 @@ class WitController < ApplicationController
     }
     session = 'ryanJ'
     client = Wit.new(access_token: ENV['WIT_ACCESS_TOKEN'], actions: actions)
-    client.run_actions(session, 'I need to replace my battery plz', {})
-    sleep 1
-    client.run_actions(session, 'GMC Envoy 2007', {})
+    # client.run_actions(session, 'I need to replace my battery plz', {})
+    # sleep 1
+    # client.run_actions(session, 'GMC Envoy 2007', {})
 
 
     render nothing: true, status: 200
