@@ -26,7 +26,6 @@ gem 'facebook-messenger'
 gem 'messenger-ruby'
 gem 'wit'
 gem 'foreman'
-gem 'rails_12factor'
 gem 'puma'
 
 # Use ActiveModel has_secure_password
@@ -37,6 +36,10 @@ gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'awesome_print'
