@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/ryanjones/messenger-ruby.git
+  revision: 33f68a692c78b774486b5051f1ad65d2abd04928
+  branch: phone_number
+  specs:
+    messenger-ruby (1.1.7)
+      rest-client (>= 1.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,8 +83,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    messenger-ruby (1.1.7)
-      rest-client (>= 1.7.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -181,7 +187,7 @@ DEPENDENCIES
   foreman
   jbuilder (~> 2.0)
   jquery-rails
-  messenger-ruby
+  messenger-ruby!
   pg
   pry
   puma

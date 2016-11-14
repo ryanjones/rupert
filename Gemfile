@@ -22,7 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'messenger-ruby'
+gem 'messenger-ruby', github: 'ryanjones/messenger-ruby', branch: 'phone_number'
 gem 'wit'
 gem 'foreman'
 gem 'puma'
