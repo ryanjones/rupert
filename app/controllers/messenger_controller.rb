@@ -48,15 +48,15 @@ private
 
         return request['context']
       },
-      batteryReplacementLink: -> (request) {
-        puts("batteryReplacementLink: web_url button being sent...")
+      roadsideRequestLink: -> (request) {
+        puts("roadsideRequestLink: web_url button being sent...")
 
         buttons = Messenger::Templates::Buttons.new(
-          text: 'Some Cool Text',
+          text: 'Click the the button below and book your roadside now',
           buttons: [
             Messenger::Elements::Button.new(
               type: 'web_url',
-              title: 'Book roadside request',
+              title: 'Roadside Request',
               value: 'https://forms.ama.ab.ca/automotive/roadside-assistance-online'
             )
           ]
@@ -66,9 +66,30 @@ private
           Messenger::Request.new(buttons, session_id)
         )
         
-        
         return request['context']
       },
+      roadsideRequestPhone: -> (request) {
+        puts("roadsideRequestPhone: phone_number button being sent...")
+
+        buttons = Messenger::Templates::Buttons.new(
+          text: "Here's the number: 1-800-222-4357 or click the button below",
+          buttons: [
+            Messenger::Elements::Button.new(
+              type: 'phone_number',
+              title: 'Call AMA now',
+              value: '+18002224357'
+            )
+          ]
+        )
+
+        Messenger::Client.send(
+          Messenger::Request.new(buttons, session_id)
+        )
+
+        return request['context']
+      },
+      
+      
     }
   end
 
