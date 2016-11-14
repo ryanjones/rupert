@@ -51,12 +51,21 @@ private
       batteryReplacementLink: -> (request) {
         puts("batteryReplacementLink: web_url button being sent...")
 
-        Messenger::Client.send(
-          Messenger::Request.new(
-            Messenger::Elements::Button.new(type: 'web_url', title: 'Button', value: 'https://forms.ama.ab.ca/automotive/roadside-assistance-online'),
-            session_id
-          )
+        buttons = Messenger::Templates::Buttons.new(
+          text: 'Some Cool Text',
+          buttons: [
+            Messenger::Elements::Button.new(
+              type: 'web_url',
+              title: 'Book roadside request',
+              value: 'https://forms.ama.ab.ca/automotive/roadside-assistance-online'
+            )
+          ]
         )
+
+        Messenger::Client.send(
+          Messenger::Request.new(buttons, session_id)
+        )
+        
         
         return request['context']
       },
